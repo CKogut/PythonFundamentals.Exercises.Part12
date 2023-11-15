@@ -3,22 +3,20 @@ import enum
 
 
 class Parity(enum.Enum):
-    ODD = 0
-    EVEN = 1
+    ODD = 1
+    EVEN = 0
 
 
 def gen_list(start: int, stop: int, parity: Parity) -> List[int]:
     """
-    Oh no some evil developer decided not to write docstrings. Maybe you can use the test cases to decipher
-    what this method was supposed to do. Hey if you do, maybe you could do some good in this world by
-    updating this here docstring to something useful.
+    A function to return either only the even or odd numbers in a range
 
-    :param start:
-    :param stop:
-    :param parity:
-    :return:
+    :param start: Start of range
+    :param stop: End of range
+    :param parity: EVEN or ODD
+    :return: list
     """
-    pass
+    return [value for value in range(start, stop) if value % 2 == parity.value]
 
 
 def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
@@ -33,7 +31,8 @@ def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
     :param strategy:
     :return:
     """
-    pass
+    result = {value: strategy for value in range(start, stop)}
+    return result
 
 
 def gen_set(val_in: str) -> Set:
