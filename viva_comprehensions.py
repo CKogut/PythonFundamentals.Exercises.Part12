@@ -40,4 +40,5 @@ def gen_set(val_in: str) -> Set:
     :param val_in: a string
     :return: a set of the lower case characters in the string, transformed to upper case
     """
-    pass
+    result = {value.upper() for value in val_in if value.islower()}
+    return result
