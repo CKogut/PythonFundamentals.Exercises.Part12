@@ -21,27 +21,23 @@ def gen_list(start: int, stop: int, parity: Parity) -> List[int]:
 
 def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
     """
-    Oh no some evil developer decided not to write docstrings. Maybe you can use the test cases to decipher
-    what this method was supposed to do. Hey if you do, maybe you could do some good in this world by
-    updating this here docstring to something useful.
+    A function to create a new dictionary. Keys are integers in a given range, and values are calculated via a lambda
+    function
 
-
-    :param start:
-    :param stop:
-    :param strategy:
-    :return:
+    :param start: start of range
+    :param stop: end of range
+    :param strategy: lambda function to calculate value
+    :return: dictionary
     """
-    result = {value: strategy for value in range(start, stop)}
-    return result
+    return {value: strategy(value) for value in range(start, stop)}
 
 
 def gen_set(val_in: str) -> Set:
     """
-    Oh no some evil developer decided not to write docstrings. Maybe you can use the test cases to decipher
-    what this method was supposed to do. Hey if you do, maybe you could do some good in this world by
-    updating this here docstring to something useful.
+    A function to take in a string and return a set. Only the lower case values will be included and they will be
+    returned in upper case
 
-    :param val_in:
-    :return:
+    :param val_in: a string
+    :return: a set of the lower case characters in the string, transformed to upper case
     """
     pass
